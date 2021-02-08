@@ -16,4 +16,4 @@ If the name is not in this format, the script will not run! :(
 
 ## gatk
 
-If you run this within Pristurus, you should not have any problems! :)
+If you run this in Pristurus, you should not have any problems! :)
