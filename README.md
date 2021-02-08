@@ -1,5 +1,6 @@
 # SNP-calling-WGS
 ## Script for PAIR-END WGS DATA!!
+
 To run this script, you have to write all the sample names inside the data.txt file.
 The fastq files need to have this structure: 
 
