@@ -28,10 +28,13 @@ wait
 
 #combine the gvcf files in one, this will be a massive file!!:
 java -jar $gatk CombineGVCFs --reference $reference \
---variant $(ls *g.vcf | sed -n 1p) \ #this is a command that will look in our directory for all the files finishing in g.vcf and will select the first one
---variant $(ls *g.vcf | sed -n 2p) \ #here will select the second one
---variant $(ls *g.vcf | sed -n 3p) \ #here the third one and so on, so you'll have to create as many variant as number of samples you have, maybe we need to find a better solution for this step!
+--variant $(ls *g.vcf | sed -n 1p) \ 
+--variant $(ls *g.vcf | sed -n 2p) \ 
+--variant $(ls *g.vcf | sed -n 3p) \ 
 --output combined.g.vcf
+
+#this $(ls *g.vcf | sed -n 1p) command will look in our directory for all the files finishing in g.vcf and will select the first one, when is 2p will
+#select the second one and so on. You'll have to create as many variant as number of samples you have, maybe we need to find a better solution for this step!
 
 #finally, we make the SNP calling on the combined file to obtain the VCF:
 java -jar $gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf --output final_dataset.vcf
