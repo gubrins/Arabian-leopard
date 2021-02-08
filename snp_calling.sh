@@ -3,7 +3,7 @@ reference="/home/pristurus/Desktop/gabri/leopards/reference/African_Lion.scafSeq
 picard="/home/pristurus/Desktop/gabri/softwares/picard/picard.jar"
 gatk="/home/pristurus/Desktop/gabri/softwares/gatk/gatk-package-4.1.7.0-local.jar"
 
-#to map the sample with the referencen genome:
+#to map the sample with the reference genome:
 for i in $(cat $samples);
 do
 #bwa -t will fix number of threads. Be careful! Take into account number of samples that will proceed at the same time. 
