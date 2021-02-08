@@ -10,10 +10,10 @@ If the name is not in this format, the script will not run! :(
 # Softwared required:
 ## bwa
 
-samtools
+## samtools
 
-picard
+## picard
 
-gatk
+## gatk
 
 If you run this within Pristurus, you should not have any problems! :)
