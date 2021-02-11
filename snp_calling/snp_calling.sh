@@ -39,3 +39,9 @@ java -jar $gatk CombineGVCFs --reference $reference \
 #finally, we make the SNP calling on the combined file to obtain the VCF:
 java -jar $gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf --output final_dataset.vcf
 
+
+
+
+
+http://openaccess.uoc.edu/webapps/o2/bitstream/10609/64027/3/pelsoTFM0617memoria.pdf
+
