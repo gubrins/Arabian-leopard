@@ -15,14 +15,14 @@ wait
 #to mark duplicated reads, really important in WGS!:
 for i in $(cat $samples);
 do
-(java -jar $picard MarkDuplicates INPUT="$i".bam OUTPUT="$i"_mkdup.bam METRICS_FILE="$i".txt ASSUME_SORT_ORDER=coordinate CREATE_INDEX=True TMP_DIR=/tmp) &
+(java -jar $picard MarkDuplicates INPUT="$i".bam OUTPUT="$i"_mkdup.bam METRICS_FILE="$i".txt ASSUME_SORT_ORDER=coordinate REMOVE_DUPLICATES=TRUE CREATE_INDEX=True TMP_DIR=/tmp) &
 done
 wait
 
 #to do the SNP calling with GATK:
 for i in $(cat $samples);
 do
-(java -jar $gatk HaplotypeCaller --reference $reference --input "$i"_mkdup.bam --output "$i".g.vcf -ERC GVCF) &
+(java -jar $gatk HaplotypeCaller --reference $reference --input "$i"_mkdup.bam --output "$i".g.vcf -ERC BP_RESOLUTION) &
 done
 wait
 
