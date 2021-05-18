@@ -1,3 +1,4 @@
+#!/bin/bash
 samples="data.txt"
 reference="/home/pristurus/Desktop/gabri/leopards/reference/African_Lion.scafSeq.FG.fasta"
 picard="/home/pristurus/Desktop/gabri/softwares/picard/picard.jar"
