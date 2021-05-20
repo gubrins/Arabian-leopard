@@ -44,5 +44,3 @@ java -jar $gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf --
 
 
 
-http://openaccess.uoc.edu/webapps/o2/bitstream/10609/64027/3/pelsoTFM0617memoria.pdf
-
