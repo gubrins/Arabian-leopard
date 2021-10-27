@@ -16,5 +16,7 @@ NC_018737.3	64340295
 NC_018738.3	44648284
 NC_018739.3	71664243
 NC_018740.3	85752456
-NC_018741.3	130557009 #sex chromosome
-NC_001700.1	17009 #mitochondrial chromosome
+#NC_018741.3	130557009 #sex chromosome
+#NC_001700.1	17009 #mitochondrial chromosome
+
+#for the phylogeny we avoid sexual and mitochondrial genomes
