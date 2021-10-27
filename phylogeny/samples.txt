@@ -1,0 +1,6 @@
+neofelis_nebulosa_catmapped_mkdup_30.bam
+panthera_uncia_30_mkdup.bam
+panthera_tigris_altaica_catmapped_mkdup_30.bam
+tanzania_lion_catmapped_mkdup_30.bam
+panthera_onca_catmapped_mkdup_30.bam
+tanzaniaN_african_leopard_catmapped_mkdup_30.bam
