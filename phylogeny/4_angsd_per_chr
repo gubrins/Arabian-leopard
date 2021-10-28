@@ -1,0 +1,13 @@
+autosomes="/home/panthera/gabri/leopards/analisis/autosomes/phylogeny/scripts/4_angsd_per_chr/autosomes.txt"
+
+for sample in $(ls /home/panthera/gabri/leopards/analisis/autosomes/phylogeny/results/bams_per_chromosome/NC*/*bam);
+do
+chr=$(echo "$sample" |cut -d/ -f11)
+id=$(echo "$sample" |cut -d/ -f12)
+id2=$(echo "$id" |cut -d. -f1)
+echo "angsd -i "$sample" -doFasta 3 -out /home/panthera/gabri/leopards/analisis/autosomes/phylogeny/results/angsd_per_chr/"$chr"/"$id2""
+done
+
+
+
+
