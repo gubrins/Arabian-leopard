@@ -1,1 +1,1 @@
-sed -i -e 's/NC_018/etiopia_NC_018/g' leopard_etiopia_catmapped_30_autosomes.fa 
+sed -i -e 's/.3/.3_etiopia/g' leopard_etiopia_catmapped_30_autosomes.fa 
