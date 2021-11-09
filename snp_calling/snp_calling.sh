@@ -38,7 +38,7 @@ java -jar $gatk CombineGVCFs --reference $reference \
 #select the second one and so on. You'll have to create as many variant as number of samples you have, maybe we need to find a better solution for this step!
 
 #finally, we make the SNP calling on the combined file to obtain the VCF:
-java -jar $gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf --output final_dataset.vcf
+java -jar $gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf --include-non-variant-sites --output final_dataset.vcf
 
 
 
