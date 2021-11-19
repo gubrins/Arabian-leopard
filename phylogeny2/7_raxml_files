@@ -1,0 +1,6 @@
+for i in $(cat sliding_windows2.txt);
+do
+grep -A1 $i better_sliding_windows_one_line.fa > $i.txt
+sed 's/:/_/g' $i
+done
+
