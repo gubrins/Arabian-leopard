@@ -1,3 +1,4 @@
+gunzip *gz
 for i in $(ls "$directory"/*fa);
 do
 (grep -v ">" "$directory""$i" > "$out"/"$i"_no_chr.fa) &
