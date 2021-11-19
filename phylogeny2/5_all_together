@@ -1,0 +1,1 @@
+cat *no_chr.fa > all_sequences.fa
