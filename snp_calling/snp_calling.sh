@@ -32,6 +32,7 @@ java -jar $gatk CombineGVCFs --reference $reference \
 --variant $(ls *g.vcf | sed -n 1p) \ 
 --variant $(ls *g.vcf | sed -n 2p) \ 
 --variant $(ls *g.vcf | sed -n 3p) \ 
+--ADD convert to base pair
 --output combined.g.vcf
 
 #this $(ls *g.vcf | sed -n 1p) command will look in our directory for all the files finishing in g.vcf and will select the first one, when is 2p will
