@@ -20,6 +20,8 @@ do
 done
 wait
 
+Supplementary alignments and unmapped reads were removed, using the -F256 and -F4 flag, respectively
+
 #to do the SNP calling with GATK:
 for i in $(cat $samples);
 do
