@@ -20,12 +20,14 @@ do
 done
 wait
 
+filter quality 30 mapping score
+
 Supplementary alignments and unmapped reads were removed, using the -F256 and -F4 flag, respectively
 
 #to do the SNP calling with GATK:
 for i in $(cat $samples);
 do
-(java -jar $gatk HaplotypeCaller --reference $reference --input "$i"_mkdup.bam --output "$i".g.vcf -ERC BP_RESOLUTION) &
+(java -jar $gatk HaplotypeCaller --reference $reference --input "$i"_mkdup.bam --output "$i".g.vcf -L chromosome -ERC BP_RESOLUTION) &
 done
 wait
 
@@ -34,7 +36,7 @@ java -jar $gatk CombineGVCFs --reference $reference \
 --variant $(ls *g.vcf | sed -n 1p) \ 
 --variant $(ls *g.vcf | sed -n 2p) \ 
 --variant $(ls *g.vcf | sed -n 3p) \ 
---ADD convert to base pair
+--convert-to-base-pair-resolution
 --output combined.g.vcf
 
 #this $(ls *g.vcf | sed -n 1p) command will look in our directory for all the files finishing in g.vcf and will select the first one, when is 2p will
