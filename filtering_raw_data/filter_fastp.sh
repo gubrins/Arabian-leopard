@@ -4,3 +4,5 @@ fastp -i "$dir""$i"_1.fastq.gz -I "$dir""$i"_2.fastq.gz -o "$dir"fastp/"$i"_1_fa
 --detect_adapter_for_pe --correction --trim_poly_g --trim_poly_x -p --thread 2 --qualified_quality_phred 30 --adapter_sequence AGATCGGAAGAG \
 --adapter_sequence_r2 AGATCGGAAGAG
 done
+
+#this adapter is the illumina universal adapter that fastp can´t remove because is too short!
