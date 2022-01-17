@@ -20,7 +20,7 @@ do
 done
 wait
 
-filter quality 30 mapping score
+samtools view -q 30 -b bam.file > file_30.bam
 
 Supplementary alignments and unmapped reads were removed, using the -F256 and -F4 flag, respectively
 
