@@ -20,9 +20,9 @@ do
 done
 wait
 
+#we filter for mapping quality of at least 30, we remove unmapped reads and secondary alignments:
 samtools view -q 30 -F 260 -b bam.file -o file_30.bam
 
-Supplementary alignments and unmapped reads were removed, using the -F256 and -F4 flag, respectively
 
 #to do the SNP calling with GATK:
 for i in $(cat $samples);
