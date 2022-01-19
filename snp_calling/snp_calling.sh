@@ -9,16 +9,16 @@ for i in $(cat $samples);
 do
 #bwa -t will fix number of threads. Be careful! Take into account number of samples that will proceed at the same time. 
 #If you have 10 samples and -t 10, will need 100 cores!!!
-(bwa mem -t 10 -M $reference "$i"_1.fastq.gz "$i"_2.fastq.gz -R "@RG\tID:"$i"\tSM:"$i"" | samtools sort -o "$i".bam) &
+bwa mem -t 10 -M $reference "$i"_1.fastq.gz "$i"_2.fastq.gz -R "@RG\tID:"$i"\tSM:"$i"" | samtools sort -o "$i".bam
 done
-wait
+
 
 #to mark duplicated reads, really important in WGS!:
 for i in $(cat $samples);
 do
-(java -jar $picard MarkDuplicates INPUT="$i".bam OUTPUT="$i"_mkdup.bam METRICS_FILE="$i".txt ASSUME_SORT_ORDER=coordinate REMOVE_DUPLICATES=TRUE CREATE_INDEX=True TMP_DIR=/tmp) &
+java -jar $picard MarkDuplicates INPUT="$i".bam OUTPUT="$i"_mkdup.bam METRICS_FILE="$i".txt ASSUME_SORT_ORDER=coordinate REMOVE_DUPLICATES=TRUE CREATE_INDEX=True TMP_DIR=/tmp
 done
-wait
+
 
 #we filter for mapping quality of at least 30, we remove unmapped reads and secondary alignments:
 samtools view -q 30 -F 260 -b bam.file -o file_30.bam
@@ -27,9 +27,9 @@ samtools view -q 30 -F 260 -b bam.file -o file_30.bam
 #to do the SNP calling with GATK:
 for i in $(cat $samples);
 do
-(java -jar $gatk HaplotypeCaller --reference $reference --input "$i"_mkdup.bam --output "$i".g.vcf -L chromosome -ERC BP_RESOLUTION) &
+java -jar $gatk HaplotypeCaller --reference $reference --input "$i"_mkdup.bam --output "$i".g.vcf -L chromosome -ERC BP_RESOLUTION
 done
-wait
+
 
 #combine the gvcf files in one, this will be a massive file!!:
 java -jar $gatk CombineGVCFs --reference $reference \
