@@ -4,6 +4,16 @@ reference="/home/pristurus/Desktop/gabri/leopards/reference/African_Lion.scafSeq
 picard="/home/pristurus/Desktop/gabri/softwares/picard/picard.jar"
 gatk="/home/pristurus/Desktop/gabri/softwares/gatk/gatk-package-4.1.7.0-local.jar"
 
+#INDEX THE REFERENCE GENOME!
+bwa index reference_genome
+samtools faidx path_to_reference.fa
+
+#create index file:
+java -jar /home/panthera/software/picard/picard.jar CreateSequenceDictionary R= path_to_reference.fa
+
+
+
+
 #to map the sample with the reference genome:
 for i in $(cat $samples);
 do
@@ -25,10 +35,16 @@ samtools view -q 30 -F 260 -b bam.file -o file_30.bam
 
 
 #to do the SNP calling with GATK:
-for i in $(cat $samples);
+for sample in $(cat $samples);
 do
-java -jar $gatk HaplotypeCaller --reference $reference --input "$i"_mkdup.bam --output "$i".g.vcf -L chromosome -ERC BP_RESOLUTION
+for i in $(cat $chrom)
+do
+(java -jar $gatk HaplotypeCaller -R $ref -I "$dir""$sample".bam -O "$sample""$i".g.vcf -ERC BP_RESOLUTION -L "$i") &
 done
+wait
+
+done
+
 
 
 #combine the gvcf files in one, this will be a massive file!!:
