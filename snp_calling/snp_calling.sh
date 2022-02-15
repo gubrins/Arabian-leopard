@@ -48,12 +48,22 @@ done
 
 
 #combine the gvcf files in one, this will be a massive file!!:
-java -jar $gatk CombineGVCFs --reference $reference \
---variant $(ls *g.vcf | sed -n 1p) \ 
---variant $(ls *g.vcf | sed -n 2p) \ 
---variant $(ls *g.vcf | sed -n 3p) \ 
---convert-to-base-pair-resolution
---output combined.g.vcf.gz
+chrom="/home/panthera/gabri/leopards/cat_reference_genome/chromosomes_1.txt"
+list="/mnt/DiscoB/leopards/gvcf/"
+
+for i in $(cat $chrom)
+do
+$gatk CombineGVCFs --reference $ref \
+--variant $(ls "$list"*/*"$i"*.g.vcf | sed -n 1p) \
+--variant $(ls "$list"*/*"$i"*.g.vcf | sed -n 2p) \
+--variant $(ls "$list"*/*"$i"*.g.vcf | sed -n 3p) \
+--variant $(ls "$list"*/*"$i"*.g.vcf | sed -n 4p) \
+--variant $(ls "$list"*/*"$i"*.g.vcf | sed -n 5p) \
+--variant $(ls "$list"*/*"$i"*.g.vcf | sed -n 6p) \
+--variant $(ls "$list"*/*"$i"*.g.vcf | sed -n 7p) \
+--convert-to-base-pair-resolution \
+--output "$out""$i".g.vcf.gz
+done
 
 #this $(ls *g.vcf | sed -n 1p) command will look in our directory for all the files finishing in g.vcf and will select the first one, when is 2p will
 #select the second one and so on. You'll have to create as many variant as number of samples you have, maybe we need to find a better solution for this step!
