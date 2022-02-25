@@ -1,0 +1,20 @@
+"PAR - TanzaniaN"	african_leopard	6
+"PAR - TanzaniaW"	african_leopard	7
+"NIM - Arabian1"	arabian_leopard	9
+"NIM - Arabian2"	arabian_leopard	10
+"PAR - Ghana"	african_leopard	2
+"FUS - India"	asian_leopard	14
+"TUL -Afghanistan"	asian_leopard	12
+"PAR - Cameroon"	african_leopard	3
+"PAR - Etiopia"	african_leopard	8
+"MEL - Java"	asian_leopard	17
+"ORI - Korea"	asian_leopard	18
+"PAR - Morocco"	african_leopard	1
+"FUS - Nepal"	asian_leopard	13
+"TUL - Palestine"	asian_leopard	11
+"PAR - South Africa"	african_leopard	5
+"KOT - Srilanka"	asian_leopard	15
+"DEL - Vietnam"	asian_leopard	16
+"PAR - Namibia"	african_leopard	4
+"ORI - Zoo"	asian_leopard	19
+"ORI - Amur"	asian_leopard	20
