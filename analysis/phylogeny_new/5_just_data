@@ -1,0 +1,5 @@
+for i in $(ls *fa);
+do
+(grep -v ">" $i > no_chr/"$i"_no_chr.fa) &
+done
+wait
