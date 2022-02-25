@@ -1,0 +1,1 @@
+bash convertVCFtoEigenstrat.sh vcf_file --renameScaff
