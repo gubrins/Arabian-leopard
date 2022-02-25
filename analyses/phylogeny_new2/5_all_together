@@ -1,1 +1,2 @@
+#You put all the sequences in a unique file:
 cat *no_chr.fa > all_sequences.fa
