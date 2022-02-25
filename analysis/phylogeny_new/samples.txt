@@ -1,0 +1,21 @@
+tanzania_lion_catmapped_mkdup_30.bam #outgroup
+tanzaniaN_african_leopard_catmapped_mkdup_30.bam
+tanzaniaW_african_leopard_catmapped_mkdup_30.bam
+arabian_leopard_1_catmapped_mkdup_30.bam
+arabian_leopard_2_catmapped_mkdup_30.bam
+ghana_african_leopard_7547_catmapped_mkdup_30.bam
+leopard_afganistan_catmapped_30.bam_mkdup.bam
+leopard_cameroon_catmapped_30.bam_mkdup.bam
+leopard_java_catmapped_30.bam_mkdup.bam
+leopard_palestine_catmapped_30.bam_mkdup.bam    
+leopard_korea_catmapped_30.bam_mkdup.bam    
+leopard_southafrica_catmapped_30.bam_mkdup.bam
+leopard_etiopia_catmapped_30.bam_mkdup.bam     
+leopard_morocco_catmapped_30.bam_mkdup.bam  
+leopard_srilanka_catmapped_30.bam_mkdup.bam
+leopard_indian_30.bam_mkdup.bam                
+leopard_nepal_catmapped_30.bam_mkdup.bam    
+leopard_vietnam_catmapped_30.bam_mkdup.bam
+namibia_african_leopard_7942_catmapped_mkdup_30.bam
+panthera_pardus_japonensis_catmapped_mkdup_30.bam
+panthera_pardus_orientalis_catmapped_mkdup_30.bam
