@@ -72,7 +72,7 @@ done
 java -jar $gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf.gz --include-non-variant-sites --output final_dataset.vcf.gz
 
 #concatenar
-bcftools concat *gz -o final_file.vcf.gz
+bcftools concat *dataset.vcf.gz -o final_file.vcf.gz
 
 
 
