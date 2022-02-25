@@ -1,8 +1,0 @@
-for i in $(ls *bam);
-do
-samtools view -b $i NC_0187{23..40}.3 > $i_autosomes.bam
-done
-
-samtools index *autosomes.bam
-
-#Here NC_0187{23..40}.3 are the name of my autosomes, if you´re using a different reference genome, you should change it

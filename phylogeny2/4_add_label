@@ -1,3 +1,0 @@
-sed -i '1 i\label' file.txt
-
-#I NEED TO IMPROVE THIS, AS THIS IS JUST TO ADD A LABEL TO ONE SAMPLE

@@ -1,8 +1,0 @@
-for fasta in $(find -name "*0.txt");
-do
-for i in $(cat numbers.txt);
-do
-new_fasta=prueba/$(basename $fasta .fas).new.fas
-sed 's/'"$i"'//g' $fasta > $new_fasta
-done
-done

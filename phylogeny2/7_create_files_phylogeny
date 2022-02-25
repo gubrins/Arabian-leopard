@@ -1,5 +1,0 @@
-for i in $(cat sliding_windows2.txt);
-do
-grep -A1 --no-group-separator $i better_sliding_windows_one_line.fa |sed 's/:/_/g' > $i.txt
-done
-
