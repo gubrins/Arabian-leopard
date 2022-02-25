@@ -1,22 +1,6 @@
-# SNP calling WGS
-Script for PAIR-END WGS DATA!
+# Arabian leopard
+Welcome to the repository for the Arabian leopard publication. 
+Here you will be able to find all the code we used for our publication on the conservation genomics of the Arabian leopard.
 
-To run this script, you have to write all the sample names inside the data.txt file.
-The fastq files need to have this structure: 
-
-name_1.fastq.gz
-
-name_2.fastq.gz
-
-If it is not in this format, the script will not run!!
-
-# Softwared required:
-## bwa
-
-## samtools
-
-## picard
-
-## gatk
-
-If you run this in Pristurus, you should not have any problems! :)
+In order to find the scripts for preprocessing of the data (from raw reads to vcf), check the processing_data folder.
+To check how we did the results we presented, check the analysis folder.
