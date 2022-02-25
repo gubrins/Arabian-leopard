@@ -1,0 +1,4 @@
+for i in $(ls *txt);
+do
+iqtree -s $i -B 1000 -nt 10 -m GTR+I+G --prefix iqtree_"$i"
+done
