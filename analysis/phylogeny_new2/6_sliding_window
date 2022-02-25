@@ -1,0 +1,5 @@
+seqkit sliding good_all_sequences.fa -s 1000000 -W 1000000 > sliding_window_leopards.fa
+
+bash all_sequences_one_line.sh sliding_windows_leopards.fa
+
+tail -n +2 sliding_windows_leopards_one_line.fa > sliding_windows_leopards_one_line.tmp && mv sliding_windows_leopards_one_line.tmp sliding_windows_leopards_one_line.fa
