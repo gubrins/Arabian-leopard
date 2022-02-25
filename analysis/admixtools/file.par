@@ -1,0 +1,6 @@
+genotypename:	admixtools_indian2_filtered_unlinked.eigenstratgeno
+snpname:	admixtools_indian2_filtered_unlinked.snp
+indivname:	final.ind
+poplistname:	list_qpDstat
+popfilename:	list_qpDstat1
+printsd:	YES
