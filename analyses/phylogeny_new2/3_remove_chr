@@ -1,6 +1,8 @@
+#in order to use grep, we need to unzip the fq files:
 gunzip *gz
+
+#we will remove the chromosomes names in the file:
 for i in $(ls "$directory"/*fa);
 do
-(grep -v ">" "$directory""$i" > "$out"/"$i"_no_chr.fa) &
+grep -v ">" "$directory""$i" > "$i"_no_chr.fa
 done
-wait
