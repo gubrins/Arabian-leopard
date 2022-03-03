@@ -7,12 +7,7 @@ gatk="/home/pristurus/Desktop/gabri/softwares/gatk/gatk-package-4.1.7.0-local.ja
 #INDEX THE REFERENCE GENOME!
 bwa index reference_genome
 samtools faidx path_to_reference.fa
-
-#create index file:
 java -jar /home/panthera/software/picard/picard.jar CreateSequenceDictionary R=path_to_reference.fa
-
-
-
 
 #to map the sample with the reference genome:
 for i in $(cat $samples);
