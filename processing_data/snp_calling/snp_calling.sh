@@ -9,7 +9,7 @@ bwa index reference_genome
 samtools faidx path_to_reference.fa
 
 #create index file:
-java -jar /home/panthera/software/picard/picard.jar CreateSequenceDictionary R= path_to_reference.fa
+java -jar /home/panthera/software/picard/picard.jar CreateSequenceDictionary R=path_to_reference.fa
 
 
 
