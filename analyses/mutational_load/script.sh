@@ -3,7 +3,7 @@ do
 
 (mkdir $i
 bcftools view -s $i just_leopards_filtered_usnps_maf.vcf.gz |gzip -c > "$i"/"$i".vcf.gz
-vcftools --gzvcf "$i"/"$i".vcf.gz --max-missing 1 --recode --stdout |gzip -c > "$i"/"$i"_complete.vcf
+vcftools --gzvcf "$i"/"$i".vcf.gz --max-missing 1 --recode --stdout |gzip -c > "$i"/"$i"_complete.vcf.gz
 zcat "$i"/"$i"_complete.vcf |grep -e "1/1" -e "1|1" > "$i"/"$i"_complete_1_1.vcf
 zcat "$i"/"$i"_complete.vcf |grep -e "0/1" -e "0|0"> "$i"/"$i"_complete_0_1.vcf
 zcat "$i"/"$i"_complete.vcf |grep -e "0/0" -e "0|0" > "$i"/"$i"_complete_0_0.vcf
