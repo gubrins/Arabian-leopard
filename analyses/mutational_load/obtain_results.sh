@@ -1,4 +1,4 @@
-for i in $(bcftools query -l max_missing1_all_leopards.vcf.gz);
+for i in $(bcftools query -l $1);
 do
 cd "$i"/high/
 echo "$i HIGH"
