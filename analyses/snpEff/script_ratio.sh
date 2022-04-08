@@ -21,4 +21,4 @@ cut -f1 eigenstrat.geno | sort| uniq -c |sort -nr > uniq.txt
 cat uniq.txt |cut -f 2 -d " " > final_uniq.txt
 
 #and we count the number of 1 that appear:
-for i in $(cat final_uniq_asians.txt); do echo $i |tr -cd '1' |wc -c; done
+for i in $(cat final_uniq.txt); do echo $i |tr -cd '1' |wc -c; done
