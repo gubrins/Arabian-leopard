@@ -15,10 +15,13 @@ cat comments.txt out_high.vcf > comments_out_high.vcf
 bash vcf2eigenstrat.sh comments_out_high.vcf
 
 #we get the frequency:
-cut -f1 eigenstrat.geno | sort| uniq -c |sort -nr > uniq.txt
+cut -f1 eigenstrat.geno | sort| uniq -c |sort -nr |sed 's/    //g'> uniq.txt
 
-#we select the second column:
+#we select the second column, ATTENTION, you should check if there is any space between the start of the line and the first number, if so, remove it!
 cat uniq.txt |cut -f 2 -d " " > final_uniq.txt
 
 #and we count the number of 1 that appear:
 for i in $(cat final_uniq.txt); do echo $i |tr -cd '1' |wc -c; done
+
+#get the frequency:
+cut -f1 -d" " uniq.txt > frequency.txt
