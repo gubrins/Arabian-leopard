@@ -12,6 +12,14 @@ df$end = as.integer(df$end)
 
 write.table(df,"in_out_roh.txt",col.names = F,row.names = F,quote = F)
 
+#You also have to edit the rohs file in R:
+
+roh_raw = read.table("nepal.txt")
+roh_filtered = roh_raw[roh_raw$V8>70,]
+write.table(roh_filtered,"roh_filtered.txt",sep=" ",row.names=F,col.names=F,quote=F)
+
+#and in bash:
+cat roh_filtered.txt |cut -f 3,4,5 -d" " > coordinates.txt
 
 #after that, in bash:
 
@@ -22,12 +30,7 @@ cat 3.txt |sed 's/ /\t/g' > 3_tabs.txt
 
 #and finally:
 
-bedtools intersect -a 3_tabs.txt -b coordinates2.txt -wa > in_roh.txt
-bedtools intersect -v -a 3_tabs.txt -b coordinates2.txt -wa > out_roh.txt
+bedtools intersect -a 3_tabs.txt -b coordinates.txt -wa > in_roh.txt
+bedtools intersect -v -a 3_tabs.txt -b coordinates.txt -wa > out_roh.txt
 
-#where coordinates is a file like this:
-#chrom start  end
-NC_018723.3	203270	441160
-NC_018723.3	624960	695520
-NC_018723.3	756696	977820
-NC_018723.3	1005429	1221086
+
