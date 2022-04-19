@@ -2,7 +2,7 @@
 samples="data.txt"
 reference="/home/pristurus/Desktop/gabri/leopards/reference/African_Lion.scafSeq.FG.fasta"
 picard="/home/pristurus/Desktop/gabri/softwares/picard/picard.jar"
-gatk="/home/pristurus/Desktop/gabri/softwares/gatk/gatk-package-4.1.7.0-local.jar"
+gatk="/home/panthera/software/gatk4.1.3/gatk-4.1.3.0/gatk" 
 
 #INDEX THE REFERENCE GENOME!
 bwa index reference_genome
@@ -34,7 +34,7 @@ for sample in $(cat $samples);
 do
 for i in $(cat $chrom)
 do
-java -jar $gatk HaplotypeCaller -R $ref -I "$dir""$sample".bam -O "$sample""$i".g.vcf.gz -ERC BP_RESOLUTION -L "$i"
+$gatk HaplotypeCaller -R $ref -I "$dir""$sample".bam -O "$sample""$i".g.vcf.gz -ERC BP_RESOLUTION -L "$i"
 done
 wait
 
@@ -64,7 +64,7 @@ done
 #select the second one and so on. You'll have to create as many variant as number of samples you have, maybe we need to find a better solution for this step!
 
 #finally, we make the SNP calling on the combined file to obtain the VCF:
-java -jar $gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf.gz --include-non-variant-sites --output final_dataset.vcf.gz
+$gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf.gz --include-non-variant-sites --output final_dataset.vcf.gz
 
 #concatenar
 bcftools concat *dataset.vcf.gz -o final_file.vcf.gz
