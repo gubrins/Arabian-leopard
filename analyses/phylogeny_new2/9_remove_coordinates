@@ -1,9 +1,13 @@
 from the treefiles created by IQtree, we need to remove the coordinates, because if not, same individuals will have different labels:
+mkdir new
 for fasta in $(find -name "*txt.treefile");
 do
 for i in $(cat sliding_windows.txt);
 do
+if cat $fasta |grep $i
+then
 new_fasta=new/$(basename $fasta .fas).new.fas
 sed 's/'"$i"'//g' $fasta > $new_fasta
+fi
 done
 done
