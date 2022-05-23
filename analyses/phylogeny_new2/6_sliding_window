@@ -12,3 +12,10 @@ cat sliding_windows_leopards_one_line_500.fa |grep arab_leop_1_sliding > arab1_s
 cat arab1_sliding_windows.txt |cut -f2 -d: > sliding_windows_500k.txt
 cat sliding_windows_500k.txt |sed 's/^/:/g' > sliding_windows_500k_new.txt
 
+
+#we need to remove also the ":"
+mkdir nodots
+for i in $(ls *txt);
+do
+sed 's/:/_/g' $i > nodots/"$i"_nodots.txt
+done
