@@ -1,4 +1,4 @@
-from the treefiles created by IQtree, we need to remove the coordinates, because if not, same individuals will have different labels:
+#from the treefiles created by IQtree, we need to remove the coordinates, because if not, same individuals will have different labels:
 mkdir new
 for fasta in $(find -name "*txt.treefile");
 do
