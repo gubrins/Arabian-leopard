@@ -7,7 +7,7 @@ bash all_sequences_one_line.sh sliding_windows_leopards.fa
 #I don't know why in the first line there is an empty space, so we remove it:
 tail -n +2 sliding_windows_leopards_one_line.fa > sliding_windows_leopards_one_line.tmp && mv sliding_windows_leopards_one_line.tmp sliding_windows_leopards_one_line.fa
 
-#Finally, you create the sliding windows file (NOT SURE WHY DO WE NEED THIS)
+#Finally, you create the sliding windows file that will be needed later for doing the phylogenetic files!:
 cat sliding_windows_leopards_one_line_500.fa |grep arab_leop_1_sliding > arab1_sliding_windows.txt
 cat arab1_sliding_windows.txt |cut -f2 -d: > sliding_windows_500k.txt
 cat sliding_windows_500k.txt |sed 's/^/:/g' > sliding_windows_500k_new.txt
