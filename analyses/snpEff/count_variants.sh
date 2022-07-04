@@ -1,7 +1,9 @@
+#before they were looking for the field EFF, now, from version 4.1, we need to look for the ANN field:
+
 cat output.ann.vcf \
 | cut -f 8 \
 | tr ";" "\n" \
-| grep ^EFF= \
+| grep ^ANN= \
 | cut -f 2 -d = \
 | tr "," "\n" \
 | grep MODIFIER \
