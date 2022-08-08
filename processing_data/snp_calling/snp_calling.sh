@@ -64,10 +64,13 @@ done
 #select the second one and so on. You'll have to create as many variant as number of samples you have, maybe we need to find a better solution for this step!
 
 #finally, we make the SNP calling on the combined file to obtain the VCF:
-$gatk GenotypeGVCFs --reference $reference --variant combined.g.vcf.gz --include-non-variant-sites --output final_dataset.vcf.gz
+for i in $(cat $chrom);
+do
+$gatk GenotypeGVCFs --reference $reference --variant $i.g.vcf.gz --include-non-variant-sites --output final_dataset_"$i".vcf.gz
+done
 
 #concatenar
-bcftools concat *dataset.vcf.gz -o final_file.vcf.gz
+bcftools concat final_dataset*.vcf.gz -o final_file.vcf.gz
 
 
 
