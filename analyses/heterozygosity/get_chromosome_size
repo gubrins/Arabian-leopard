@@ -5,5 +5,6 @@ awk '$2 >= 1000000' sizes.genome > complete_sizes.genome
 
 bedtools makewindows -g complete_sizes.genome -w 100000 > windows.txt
 
- sed -i 's/0\t/0-/g' windows.txt
- sed -i 's/\t/:/g' windows.txt
+
+ awk ' { print $1 ":" $2 "-" $NF } ' windows.txt 
+ 
