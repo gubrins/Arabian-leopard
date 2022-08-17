@@ -1,0 +1,6 @@
+cut -f1,2 genome_file.fa.fai > sizes.genome
+
+bedtools makewindows -g sizes.genome -w 100000 > windows.txt
+
+ sed -i 's/0\t/0-/g' windows.txt
+ sed -i 's/\t/:/g' windows.txt
