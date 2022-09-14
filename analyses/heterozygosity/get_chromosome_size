@@ -6,6 +6,6 @@ awk '$2 >= 1000000' sizes.genome > complete_sizes.genome
 bedtools makewindows -g complete_sizes.genome -w 100000 > windows.txt
 
 
- awk ' { print $1 ":" $2 "-" $NF } ' windows.txt > windows2.txt # merge columns 1, 2 and 3 
+ awk ' { print $1 ":" $2 "-" $NF } ' windows.txt > complete_windows.txt # merge columns 1, 2 and 3 
  
- sed -i 's/:0/:1/g' windows2.txt # modify the 0 at the beginning of each window
+ sed -i 's/:0/:1/g' complete_windows.txt # modify the 0 at the beginning of each window
