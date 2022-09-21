@@ -15,5 +15,8 @@ vcftools --gzvcf file_filtered_usnps.vcf.gz --maf 0.01 --recode --stdout |gzip -
 #If you want to keep singletons, you must put a maf below the number you get, if you want to remove singletons, the maf number must be above. 
 
 
+#Remove repetitive regions:
+#First of all, we need to identify those regions:
+cat GCF_000181335.3_Felis_catus_9.0_genomic.fna| python scan_characters.py actg | bedtools merge -i - > lower_case_positions.bed
 
 
