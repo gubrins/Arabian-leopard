@@ -19,4 +19,4 @@ vcftools --gzvcf file_filtered_usnps.vcf.gz --maf 0.01 --recode --stdout |gzip -
 #First of all, we need to identify those regions:
 cat GCF_000181335.3_Felis_catus_9.0_genomic.fna| python scan_characters.py actg | bedtools merge -i - > lower_case_positions.bed
 
-
+bedtools intersect -v -a file.vcf -b lower_case_positions.bed |bgzip -c > filtered_file.vcf.gz
