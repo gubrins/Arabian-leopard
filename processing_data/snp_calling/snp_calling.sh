@@ -1,7 +1,7 @@
 #!/bin/bash
 samples="data.txt"
 reference="/home/pristurus/Desktop/gabri/leopards/reference/African_Lion.scafSeq.FG.fasta"
-picard="/home/pristurus/Desktop/gabri/softwares/picard/picard.jar"
+picard="/home/panthera/software/picard/picard.jar"
 gatk="/home/panthera/software/gatk4.1.3/gatk-4.1.3.0/gatk" 
 
 #INDEX THE REFERENCE GENOME!
