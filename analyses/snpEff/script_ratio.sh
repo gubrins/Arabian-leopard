@@ -3,10 +3,10 @@ bcftools view -S samples.txt vcf.file > samples.vcf
 #it is important that the vcf file has no missing data!
 
 #Then, you run the snpEFF on those samples:
-java -jar /home/panthera/gabri/leopards/new_gvcf/analyses/snpEff_v4_3t_core/snpEff/snpEff.jar -v cat3_final vcf.file > out.vcf
+java -jar /home/panthera/gabri/leopards/new_gvcf/analyses/snpEff_v4_3t_core/snpEff/snpEff.jar -v cat3_final vcf.file |bgzip -c > out.vcf
 
 #then, you select the category you want:
-cat out.vcf |grep "HIGH" >out_high.vcf
+zcat out.vcf |grep "HIGH" >out_high.vcf
 
 
 #then, you need to join all the comments from the previos vcf file:
