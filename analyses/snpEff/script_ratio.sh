@@ -1,5 +1,6 @@
 #You get the vcf with the samples from the same population.
-bcftools view -S samples.txt vcf.file > samples.vcf
+bcftools view -S samples.txt vcf.file > samples.vcf 
+#it is important that the vcf file has no missing data!
 
 #Then, you run the snpEFF on those samples:
 java -jar snpEff_v4_3t_core/snpEff/snpEff.jar -v cat3_final vcf.file > out.vcf
