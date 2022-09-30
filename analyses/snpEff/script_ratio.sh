@@ -5,7 +5,7 @@ bcftools view -S samples.txt vcf.file > samples.vcf
 java -jar snpEff_v4_3t_core/snpEff/snpEff.jar -v cat3_final vcf.file > out.vcf
 
 #then, you select the category you want:
-cat output.ann.vcf |cut -f 8 |tr ";" "\n" |grep ^ANN= |cut -f 2 -d = |tr "," "\n" |grep "HIGH" > out_high.vcf
+cat out.vcf |grep "HIGH" >out_high.vcf
 
 
 #then, you need to join all the comments from the previos vcf file:
