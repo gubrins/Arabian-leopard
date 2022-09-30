@@ -18,8 +18,10 @@ bash vcf2eigenstrat.sh comments_out_high.vcf
 #we get the frequency:
 cut -f1 eigenstrat.geno | sort| uniq -c |sort -nr |sed 's/    //g'> uniq.txt
 #ATTENTION, you should check if there is any space between the start of the line and the first number, if so, remove it!
-#one space must be removed manually, as the separation between the first and the second column is one space. If there is more than 1 space, then:
-sed -i 's/  //g' uniq.txt
+#If there is 1 space, then:
+sed -i 's/^ //g' uniq.txt
+#if there are more:
+sed -i 's/  //g' uniq.txt #change number of spaces accordingly
 
 
 #we select the second column, 
