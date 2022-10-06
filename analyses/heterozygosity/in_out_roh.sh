@@ -26,7 +26,7 @@ cat roh_filtered.txt |cut -f 3,4,5 -d" " > coordinates.txt
 cat in_out_roh.txt|cut -f 1,6,7 -d" "> 1.txt
 cat in_out_roh.txt|cut -f 3,4,5 -d" "> 2.txt
 paste 1.txt 2.txt > 3.txt
-cat 3.txt |sed 's/ /\t/g' > 3_tabs.txt
+perl -p -i -e 's/ /\t/g' 3.txt #change spaces per tabs
 
 #and finally:
 
