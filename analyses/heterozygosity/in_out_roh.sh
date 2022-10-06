@@ -16,6 +16,8 @@ write.table(df,"in_out_roh.txt",col.names = F,row.names = F,quote = F)
 
 roh_raw = read.table("nepal.txt")
 roh_filtered = roh_raw[roh_raw$V8>70,]
+roh_filtered = roh_raw[roh_raw$V6>100000,]
+
 write.table(roh_filtered,"roh_filtered.txt",sep=" ",row.names=F,col.names=F,quote=F)
 
 #and in bash:
