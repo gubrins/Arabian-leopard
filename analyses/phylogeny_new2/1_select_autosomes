@@ -1,6 +1,6 @@
 for i in $(ls *bam);
 do
-samtools view -b $i NC_0187{23..40}.3 > $i_autosomes.bam
+samtools view -b $i NC_0187{23..40}.3 > "$i"_autosomes.bam
 done
 
 samtools index *autosomes.bam
