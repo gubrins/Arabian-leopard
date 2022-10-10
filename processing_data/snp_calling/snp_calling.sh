@@ -55,7 +55,7 @@ do
     
   # generate the line for gatk with the variant name. Actually, all gvcfLIST could 
   #  be passed in the for loop but it is better to have the list o be able to see what have you created
-    varString=$(for gvcf in gvcfLIST; do; echo "--variant ${gvcf} "; done) 
+    varString=$(for gvcf in $gvcfLIST; do; echo "--variant ${gvcf} "; done) 
 
   # Run GATK 
     $gatk CombineGVCFs --reference $ref \
