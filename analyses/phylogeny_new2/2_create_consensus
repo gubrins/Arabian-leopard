@@ -5,5 +5,5 @@ for i in $(ls "$location"*autosomes.bam);
 do
 id=$(echo $i |cut -d/ -f11) 
 id2=$(echo $id | cut -d. -f1 )
-angsd -i $i -doFasta 3 -out "$out"/$id2
+angsd -i $i -doFasta 3 -out "$out"/"$id2"
 done
