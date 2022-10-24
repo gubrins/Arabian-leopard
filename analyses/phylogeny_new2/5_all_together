@@ -1,2 +1,5 @@
 #You put all the sequences in a unique file:
 cat *no_chr.fa > all_sequences.fa
+
+#IMPORTANT, we need to have all the sequence in one line:
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < all_sequences.fa > sliding_windows_leopards_one_line.fa
