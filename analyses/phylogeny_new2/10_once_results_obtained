@@ -1,5 +1,8 @@
-#download all the trees and:
+#download all the trees in your computer.
+#We need to check if any sample has more than 50% missing data. If so, we need to remove that tree.
 
+
+#Then:
 cat *treefile |sed 's/^/tree = /g' > concat.trees
 #in order to put all the trees in the same file
 #Then, manually, add this to the beginning of the file:
