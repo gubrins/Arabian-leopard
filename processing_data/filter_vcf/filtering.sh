@@ -1,3 +1,14 @@
+#we need to observe the distribution of several values in our data. For that, we create the .table file, which will be observed in R:
+gatk="/home/panthera/software/gatk4.1.3/gatk-4.1.3.0/gatk" 
+$gatk VariantsToTable -V just_leopards.vcf.gz -F QD -F FS -F SOR -F MQ -FMQRankSum -F ReadPosRankSum -O output_just_leopards.table
+
+#we filter with hard filtering gatk parameters after observing the distributions of those values in your data:
+$gatk SelectVariants -R /home/panthera/gabri/leopards/cat_reference_genome/GCF_000181335.3_Felis_catus_9.0_genomic.fna \
+-V just_leopards.vcf.gz -select "QD < 10.0 && MQ < 50.0 && FS > 10.0 && SOR > 4.0 && MQRankSum < -5.0 && MQRankSum > 5.0 
+&& ReadPosRankSum < -5.0 && ReadPosRankSum > 5.0" -O just_leopards_gatk.vcf.gz
+
+
+
 #First of all filter the vcf file with vcftools, keeping only biallelic snps, removing indels, quality, coverage and missing data:
 vcftools --gzvcf file.vcf.gz --min-alleles 2 --max-alleles 2 --remove-indels --minQ 30 --min-meanDP 4 --max-meanDP 150 --minDP 4 --maxDP 150 --max-missing 0.8 --recode --stdout |gzip -c > file_filtered.vcf.gz
 
