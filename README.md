@@ -17,4 +17,5 @@ If you find any of this useful, don´t forget to cite our paper :)
 <sub><sup>Adrián Talavera</sup></sub>
 
 
-<a href="[www.something.com](https://www.instagram.com/adrian.talavera/)"> Adrián Talavera </a>
+
+<a href="[www.something.com](https://www.instagram.com/adrian.talavera/)"> Adrián </a>
