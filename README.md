@@ -17,5 +17,7 @@ If you find any of this useful, don´t forget to cite our paper :)
 <sub><sup>Adrián Talavera</sup></sub>
 
 
-[Adrián Talavera](www.google.com)
-[Adrián Talavera]([quora.com/profile/Ashish-Kulkarni-100](https://www.instagram.com/adrian.talavera/)) 
+[Adrián Talavera](google.com)
+
+
+
