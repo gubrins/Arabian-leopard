@@ -14,4 +14,4 @@ If you find any of this useful, don´t forget to cite our paper :)
 
 
 ![leopard2](https://user-images.githubusercontent.com/32134625/212919442-64466fb2-c801-4595-97b5-dcfcc9e2f309.jpeg)
-<sub><sup>[Adrián Talavera]([url](https://www.instagram.com/adrian.talavera/))</sup></sub>
+<sub><sup>Adrián Talavera</sup></sub>
