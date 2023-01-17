@@ -12,4 +12,6 @@ Please, if you have any doubts, contact me at gabri.mochales@gmail.com
 
 If you find any of this useful, don´t forget to cite our paper :) 
 
-![leopard](https://user-images.githubusercontent.com/32134625/212918593-4ad33710-6934-4fb0-b00d-5410975d5cd0.jpeg)
+
+![leopard2](https://user-images.githubusercontent.com/32134625/212919442-64466fb2-c801-4595-97b5-dcfcc9e2f309.jpeg)
+<sub><sup>Adrián Talavera</sup></sub>
