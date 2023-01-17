@@ -18,4 +18,4 @@ If you find any of this useful, don´t forget to cite our paper :)
 
 
 
-Click [here](quora.com/profile/Ashish-Kulkarni-100) to go to my Quora profile.
+[Adrián Talavera]([quora.com/profile/Ashish-Kulkarni-100](https://www.instagram.com/adrian.talavera/)) 
