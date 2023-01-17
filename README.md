@@ -9,6 +9,7 @@ In this repository, you will find two different folders, the first called proces
 In the second folder, called analyses, where you can find all the scripts for the different analyses we implemented in the publication.
 
 Please, if you have any doubts, contact me at gabri.mochales@gmail.com
+
 If you find any of this useful, don´t forget to cite our paper :) 
 
 ![leopard](https://user-images.githubusercontent.com/32134625/212918593-4ad33710-6934-4fb0-b00d-5410975d5cd0.jpeg)
