@@ -14,7 +14,7 @@ for i in $(cat $samples);
 do
 #bwa -t will fix number of threads. Be careful! Take into account number of samples that will proceed at the same time. 
 #If you have 10 samples and -t 10, will need 100 cores!!!
-bwa mem -t 10 -M $reference "$i"_1.fastq.gz "$i"_2.fastq.gz -R "@RG\tID:"$i"\tSM:"$i"" | samtools sort -o "$i".bam
+bwa mem -t 10 -M $reference "$i"_1.fastq.gz "$i"_2.fastq.gz -R "@RG\tID:"$i"\tSM:"$i"" | samtools sort -@20 -o "$i".bam
 done
 
 
