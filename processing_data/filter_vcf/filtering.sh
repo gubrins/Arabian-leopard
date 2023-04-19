@@ -3,6 +3,8 @@ gatk="/home/panthera/software/gatk4.1.3/gatk-4.1.3.0/gatk"
 $gatk VariantsToTable -V just_leopards.vcf.gz -F QD -F FS -F SOR -F MQ -FMQRankSum -F ReadPosRankSum -O output_just_leopards.table
 
 #we filter with hard filtering gatk parameters after observing the distributions of those values in your data:
+#BE CAREFUL, YOU SHOULD CHECK THE OUTPUT AND SEE IF IT FILTERED CORRECTLY. OTHERWISE, CHANGE THE < AND > SYMBOLS BY ITS OPPOSITE, AS WE HAVE OBSERVED 
+#SOME PROBLEMS WITH THIS VARIANT SELECTION METHOD.
 $gatk SelectVariants -R /home/panthera/gabri/leopards/cat_reference_genome/GCF_000181335.3_Felis_catus_9.0_genomic.fna \
 -V just_leopards.vcf.gz -select "QD < 10.0 && MQ < 50.0 && FS > 10.0 && SOR > 4.0 && MQRankSum < -5.0 && MQRankSum > 5.0 
 && ReadPosRankSum < -5.0 && ReadPosRankSum > 5.0" -O just_leopards_gatk.vcf.gz
