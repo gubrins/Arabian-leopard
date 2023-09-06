@@ -72,6 +72,7 @@ done
 
 #concatenate
 bcftools concat final_dataset*.vcf.gz -o final_file.vcf.gz
+tabix -p vcf final_file.vcf.gz
 
 
 
