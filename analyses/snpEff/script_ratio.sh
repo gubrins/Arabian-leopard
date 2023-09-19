@@ -30,6 +30,7 @@ cat uniq.txt |cut -f 2 -d " " > final_uniq.txt
 
 #and we count the number of 1 that appear:
 for i in $(cat final_uniq.txt); do echo $i |tr -cd '1' |wc -c; done
+#this print needs to be saved in a different file, which I call total_counts_high_africans.txt in the R script
 
 #get the frequency:
 cut -f1 -d" " uniq.txt > frequency.txt
