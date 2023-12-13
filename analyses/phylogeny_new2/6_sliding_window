@@ -10,6 +10,7 @@ tail -n +2 sliding_windows_leopards_one_line.fa > sliding_windows_leopards_one_l
 #Finally, you create the sliding windows file that will be needed later for doing the phylogenetic files!:
 cat sliding_windows_leopards_one_line_500.fa |grep arab_leop_1_sliding > arab1_sliding_windows.txt
 cat arab1_sliding_windows.txt |cut -f2 -d: > sliding_windows_500k.txt
-cat sliding_windows_500k.txt |sed 's/^/:/g' > sliding_windows_500k_new.txt
+sed -i 's/^/:/g' sliding_windows_500k.txt
+#cat sliding_windows_500k.txt |sed 's/^/:/g' > sliding_windows_500k_new.txt
 
 
