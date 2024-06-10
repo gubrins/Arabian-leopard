@@ -10,8 +10,8 @@ windows_wHighMiss = data[data$V4>0.49,]
 #again in linux, to keep unique windows without sample names:
 
 sed 's/^.*sliding_//g' windows_wHighMiss.txt > windows_wHighMiss_nosamplenames.txt
-#cat windows_wHighMiss.txt|cut -f2 |cut -f2 -d_ |sort |uniq > uniq.txt
-sort windows_wHighMiss_nosamplenames.txt | uniq -w 20 | tee -a uniq_windows.txt
+cat windows_wHighMiss.txt|cut -f2 |cut -f2 -d_ |sort |uniq > uniq.txt #here be careful with the second cut, as it will vary depending on the amount of "_" you have
+#sort windows_wHighMiss_nosamplenames.txt | uniq -w 20 | tee -a uniq_windows.txt
 cat uniq_windows.txt | wc -l #to know how many do not pass the threshold
 
 #we remove those windows before concatenating the trees
